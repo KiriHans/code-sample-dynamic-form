@@ -1,0 +1,22 @@
+<div class="field-container" [ngSwitch]="control.type">
+  <div class="field input-field" *ngSwitchCase="'text'" [formGroup]="formName">
+    {{ control.label }}:
+    <app-dynamic-input [control]="control"></app-dynamic-input>
+  </div>
+  <div class="field input-field" *ngSwitchCase="'number'" [formGroup]="formName">
+    {{ control.label }}:
+    <app-dynamic-input [control]="control"></app-dynamic-input>
+  </div>
+  <div class="field select-field" *ngSwitchCase="'select'" [formGroup]="formName">
+    {{ control.label }}:
+    <app-dynamic-select [control]="control"></app-dynamic-select>
+  </div>
+  <div
+    class="field select-field-with-value"
+    *ngSwitchCase="'select_with_comment'"
+    [formGroup]="formName"
+  >
+    {{ control.label }}:
+    <app-dynamic-select-with-value [control]="control"></app-dynamic-select-with-value>
+  </div>
+</div>

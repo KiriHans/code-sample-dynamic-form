@@ -1,0 +1,16 @@
+<div class="wrapper" [formGroup]="formName">
+  <mat-form-field class="select-field" appearance="outline">
+    <mat-label class="label">{{ control.label }}</mat-label>
+    <mat-select class="select" [formControl]="valueControl">
+      <ng-container *ngIf="control.options as options">
+        <mat-option *ngFor="let option of options" [value]="option.key">
+          {{ option.value }}
+        </mat-option>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="input-field" appearance="outline">
+    <mat-label class="label">Additional comment</mat-label>
+    <input class="input" matInput [formControl]="additionalCommentControl" />
+  </mat-form-field>
+</div>

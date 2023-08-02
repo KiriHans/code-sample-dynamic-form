@@ -1,0 +1,11 @@
+<form [formGroup]="dynamicFormGroup">
+  <ng-container *ngIf="formData.controls as controls">
+    <div class="container">
+      <app-dynamic-field
+        *ngFor="let control of controls"
+        [control]="control"
+        [formName]="dynamicFormGroup"
+      ></app-dynamic-field>
+    </div>
+  </ng-container>
+</form>
